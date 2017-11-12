@@ -25,13 +25,28 @@ var app = app || {};
 			return count === 1 ? word : word + 's';
 		},
 
-		store: function (namespace, data) {
-			if (data) {
-				return localStorage.setItem(namespace, JSON.stringify(data));
-			}
+		// Post to the API to store todos
+		store: function (data) {
+			fetch('/api/todos', { method: 'POST',
+				body: JSON.stringify(data)
+			}).then(function(response) {
+				return response.json();
+			}).then(function(json) {
+				console.log('saved');
+			}).catch(function(err) {
+				console.error(err);
+			});
+		},
 
-			var store = localStorage.getItem(namespace);
-			return (store && JSON.parse(store)) || [];
+		// Fetch todos from the API
+		load: function(callback) {
+			fetch('/api/todos').then(function(response) {
+				return response.json();
+			}).then(function(json) {
+				return callback(null, json);
+			}).catch(function(err) {
+				return callback(err);
+			});
 		},
 
 		extend: function () {

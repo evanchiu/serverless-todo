@@ -14,9 +14,19 @@ var app = app || {};
 	// out, but we do this to demonstrate one way to
 	// separate out parts of your application.
 	app.TodoModel = function (key) {
+		var self = this;
 		this.key = key;
-		this.todos = Utils.store(key);
+		this.todos = [];
 		this.onChanges = [];
+
+		Utils.load(function(err, data) {
+			if (err) {
+				console.error(err);
+			} else {
+				self.todos = data;
+				self.inform();
+			}
+		});
 	};
 
 	app.TodoModel.prototype.subscribe = function (onChange) {
@@ -24,7 +34,7 @@ var app = app || {};
 	};
 
 	app.TodoModel.prototype.inform = function () {
-		Utils.store(this.key, this.todos);
+		Utils.store(this.todos);
 		this.onChanges.forEach(function (cb) { cb(); });
 	};
 
