@@ -21,9 +21,23 @@ function main(event, context, lambdaCallback) {
 
 function todosRoute(event, context, lambdaCallback) {
   if (event.httpMethod === 'GET') {
-    getTodos(key, lambdaCallback);
+    return getTodos(key, lambdaCallback);
   } else if (event.httpMethod === 'POST') {
-    saveTodos(key, JSON.parse(event.body), lambdaCallback);
+
+    // Get the string form of the body data
+    var todoString = event.body;
+    if (event.isBase64Encoded) {
+      todoString = Buffer.from(event.body, 'base64').toString();
+    }
+
+    // Parse it and save, or indicate bad input
+    try {
+      let todos = JSON.parse(todoString);
+      return saveTodos(key, todos, lambdaCallback);
+    } catch (err) {
+      console.error(err);
+      return done(400, '{"message":"Invalid JSON body"}', 'application/json', lambdaCallback);
+    }
   } else {
     return done(400, '{"message":"Invalid HTTP Method"}', 'application/json', lambdaCallback);
   }
