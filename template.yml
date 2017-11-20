@@ -9,7 +9,10 @@ Resources:
       Handler: src/index.handler
       Runtime: nodejs6.10
       CodeUri: build/todo.zip
-      Policies: AmazonDynamoDBFullAccess
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName:
+              Ref: todoTable
       Timeout: 10
       Events:
         root:
