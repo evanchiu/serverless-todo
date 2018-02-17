@@ -84,11 +84,12 @@ function saveTodos(id, todos, lambdaCallback) {
   });
 }
 
+// Attempt to serve public content from the public directory
 function servePublic(event, context, lambdaCallback) {
   // Set urlPath
   var urlPath;
   if (event.path === '/') {
-    urlPath = '/index.html';
+    return serveIndex(event, context, lambdaCallback);
   } else {
     urlPath = event.path;
   }
@@ -116,6 +117,25 @@ function servePublic(event, context, lambdaCallback) {
     } else {
       return done(200, data.toString(), mimeType, lambdaCallback);
     }
+  });
+}
+
+// Serve the index page
+function serveIndex(event, context, lambdaCallback) {
+  // Determine base path on whether the API Gateway stage is in the path or not
+  let base_path = '/';
+  if (event.requestContext.path.startsWith('/' + event.requestContext.stage)) {
+    base_path = '/' + event.requestContext.stage + '/';
+  }
+
+  let filePath = path.join(process.env.LAMBDA_TASK_ROOT, 'public/index.html');
+  // Read the file, fill in base_path and serve, or 404 on error
+  fs.readFile(filePath, function(err, data) {
+    if (err) {
+      return done(404, '{"message":"Not Found"}', 'application/json', lambdaCallback);
+    }
+    let content = data.toString().replace(/{{base_path}}/g, base_path);
+    return done(200, content, 'text/html', lambdaCallback);
   });
 }
 
