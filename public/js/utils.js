@@ -27,7 +27,7 @@ var app = app || {};
 
 		// Post to the API to store todos
 		store: function (data) {
-			fetch('/api/todos', { method: 'POST',
+			fetch('api/todos', { method: 'POST',
 				body: JSON.stringify(data)
 			}).then(function(response) {
 				return response.json();
@@ -40,7 +40,7 @@ var app = app || {};
 
 		// Fetch todos from the API
 		load: function(callback) {
-			fetch('/api/todos').then(function(response) {
+			fetch('api/todos').then(function(response) {
 				return response.json();
 			}).then(function(json) {
 				return callback(null, json);
