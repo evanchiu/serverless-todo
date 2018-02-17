@@ -27,18 +27,18 @@ Prerequisites: [Node.js](https://nodejs.org/en/) and [AWS CLI](http://docs.aws.a
 ## Use
 1. In the [API Gateway Console](https://console.aws.amazon.com/apigateway)
 1. Navigate to APIs / aws-serverless-repository-serverless-todo / Settings
-  1. Hit Add Binary Media Type
-  1. Enter `*/*` in the box
-  1. Hit Save Changes
-  1. Navigate to APIs / aws-serverless-repository-serverless-todo / Resources
-  1. Click the Actions dropdown
-  1. Click Deploy API
-    1. Deployment stage: **prod**
-    1. Deployment description: *Adding binary support*
-    1. Hit Deploy
+    1. Hit Add Binary Media Type
+    1. Enter `*/*` in the box
+    1. Hit Save Changes
+    1. Navigate to APIs / aws-serverless-repository-serverless-todo / Resources
+    1. Click the Actions dropdown
+    1. Click Deploy API
+        1. Deployment stage: **prod**
+        1. Deployment description: *Adding binary support*
+        1. Hit Deploy
 1. Navigate to APIs / aws-serverless-repository-serverless-todo / Dashboard
-  1. Find the Invocation url, something like *https://xxxxxxxxx.execute-api.region.amazonaws.com/Prod/*
-  1. (You can also set up [custom domain name](http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html))
+    1. Find the Invocation url, something like *https://xxxxxxxxx.execute-api.region.amazonaws.com/Prod/*
+    1. (You can also set up [custom domain name](http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html))
 1. Open the invocation url in your browser
 
 ## Links
