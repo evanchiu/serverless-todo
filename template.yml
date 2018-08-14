@@ -7,7 +7,7 @@ Resources:
     Properties:
       Description: React TodoMVC with a Serverless backend
       Handler: src/index.handler
-      Runtime: nodejs6.10
+      Runtime: nodejs8.10
       CodeUri: build/todo.zip
       Policies:
         - DynamoDBCrudPolicy:
