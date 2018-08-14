@@ -1,6 +1,11 @@
 AWSTemplateFormatVersion: 2010-09-09
 Transform: AWS::Serverless-2016-10-31
 Description: React TodoMVC with a Serverless backend
+Globals:
+  Api:
+    BinaryMediaTypes:
+      # The ~1 will be replaced with / when deployed
+      - '*~1*'
 Resources:
   siteFunction:
     Type: AWS::Serverless::Function
