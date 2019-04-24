@@ -11,7 +11,7 @@ Prerequisites: [Node.js](https://nodejs.org/en/) and [AWS CLI](http://docs.aws.a
 * Create an [AWS](https://aws.amazon.com/) Account and [IAM User](https://aws.amazon.com/iam/) with the `AdministratorAccess` AWS [Managed Policy](http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html)
 * Run `aws configure` to put store that user's credentials in `~/.aws/credentials`
 * Create an S3 bucket for storing the Lambda code and store its name in a shell variable with:
-  * `export S3_BUCKET=<bucket name>`
+  * `export CODE_BUCKET=<bucket name>`
 * Npm install:
   * `npm install`
 * Build:
@@ -46,4 +46,4 @@ Prerequisites: [Node.js](https://nodejs.org/en/) and [AWS CLI](http://docs.aws.a
 * [serverless-todo](https://serverlessrepo.aws.amazon.com/#/applications/arn:aws:serverlessrepo:us-east-1:233054207705:applications~serverless-todo) on the AWS Serverless Application Repository
 
 ## License
-&copy; 2017-2018 [Evan Chiu](https://evanchiu.com). This project is available under the terms of the MIT license.
+&copy; 2017-2019 [Evan Chiu](https://evanchiu.com). This project is available under the terms of the MIT license.

@@ -1,11 +1,11 @@
 {
   "name": "serverless-todo",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "React TodoMVC with a Serverless backend",
   "main": "src/index.js",
   "scripts": {
     "build": "node_modules/gulp/bin/gulp.js",
-    "package": "aws cloudformation package --template-file template.yml --output-template-file packaged-template.yml --s3-bucket $S3_BUCKET",
+    "package": "aws cloudformation package --template-file template.yml --output-template-file packaged-template.yml --s3-bucket $CODE_BUCKET",
     "deploy": "aws cloudformation deploy --template-file packaged-template.yml --capabilities CAPABILITY_IAM --stack-name dev-todo-$USER"
   },
   "repository": {
