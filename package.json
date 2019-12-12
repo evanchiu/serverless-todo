@@ -1,6 +1,6 @@
 {
   "name": "serverless-todo",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "React TodoMVC with a Serverless backend",
   "main": "src/index.js",
   "scripts": {
@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/evanchiu/serverless-todo#readme",
   "devDependencies": {
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "gulp-jshint": "^2.1.0",
     "gulp-zip": "^4.2.0",
     "jshint": "^2.9.6"
