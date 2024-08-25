@@ -39,11 +39,11 @@ Prerequisites: [Node.js](https://nodejs.org/en/), [yarn](https://yarnpkg.com), a
 1. Navigate to APIs / aws-serverless-repository-serverless-todo / Dashboard
     1. Find the Invocation url, something like *https://xxxxxxxxx.execute-api.region.amazonaws.com/Prod/*
     1. (You can also set up [custom domain name](http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html))
-1. Open the invocation url in your browser
+1. Open the invocation url in your browserz
 
 ## Links
 * [serverless-todo](https://github.com/evanchiu/serverless-todo) on Github
 * [serverless-todo](https://serverlessrepo.aws.amazon.com/#/applications/arn:aws:serverlessrepo:us-east-1:233054207705:applications~serverless-todo) on the AWS Serverless Application Repository
 
 ## License
-&copy; 2017-2019 [Evan Chiu](https://evanchiu.com). This project is available under the terms of the MIT license.
+&copy; 2017-2024 [Evan Chiu](https://evanchiu.com). This project is available under the terms of the MIT license.
