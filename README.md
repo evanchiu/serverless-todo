@@ -6,14 +6,14 @@ It provides a demo integration of [React](https://reactjs.org) + [API Gateway](h
 
 ## Deploy with CloudFormation
 
-Prerequisites: [Node.js](https://nodejs.org/en/) and [AWS CLI](http://docs.aws.amazon.com/cli/latest/userguide/installing.html) installed
+Prerequisites: [Node.js](https://nodejs.org/en/), [yarn](https://yarnpkg.com), and [AWS CLI](http://docs.aws.amazon.com/cli/latest/userguide/installing.html) installed
 
 * Create an [AWS](https://aws.amazon.com/) Account and [IAM User](https://aws.amazon.com/iam/) with the `AdministratorAccess` AWS [Managed Policy](http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html)
 * Run `aws configure` to put store that user's credentials in `~/.aws/credentials`
 * Create an S3 bucket for storing the Lambda code and store its name in a shell variable with:
   * `export CODE_BUCKET=<bucket name>`
 * Npm install:
-  * `npm install`
+  * `yarn install`
 * Build:
   * `npm run build`
 * Upload package to S3, transform the CloudFormation template:

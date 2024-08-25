@@ -4,6 +4,7 @@
   "description": "React TodoMVC with a Serverless backend",
   "main": "src/index.js",
   "scripts": {
+    "lint": "eslint src",
     "build": "node_modules/gulp/bin/gulp.js",
     "package": "aws cloudformation package --template-file template.yml --output-template-file packaged-template.yml --s3-bucket $CODE_BUCKET",
     "deploy": "aws cloudformation deploy --template-file packaged-template.yml --capabilities CAPABILITY_IAM --stack-name dev-todo-$USER"
@@ -24,13 +25,10 @@
     "url": "https://github.com/evanchiu/serverless-todo/issues"
   },
   "homepage": "https://github.com/evanchiu/serverless-todo#readme",
-  "devDependencies": {
-    "gulp": "^4.0.2",
-    "gulp-jshint": "^2.1.0",
-    "gulp-zip": "^4.2.0",
-    "jshint": "^2.9.6"
-  },
   "dependencies": {
-    "mime-types": "^2.1.19"
+    "mime-types": "^2.1.35"
+  },
+  "devDependencies": {
+    "eslint": "^8.52.0"
   }
 }

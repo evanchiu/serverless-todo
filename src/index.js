@@ -74,7 +74,7 @@ function saveTodos(id, todos, lambdaCallback) {
     }
   };
 
-  doc.put(params, function(err, data) {
+  doc.put(params, function(err) {
     if (err) {
       console.log('DynamoDB error on put: ', err);
       return done(500, '{"message":"Internal Server Error"}', 'application/json', lambdaCallback);
