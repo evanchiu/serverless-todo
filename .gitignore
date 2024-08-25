@@ -59,6 +59,7 @@ typings/
 
 # build output
 build
+bundle.js
 
 # cloudformation generated template
 packaged-template.yml

@@ -15,11 +15,11 @@ Prerequisites: [Node.js](https://nodejs.org/en/), [yarn](https://yarnpkg.com), a
 * Npm install:
   * `yarn install`
 * Build:
-  * `npm run build`
+  * `yarn build`
 * Upload package to S3, transform the CloudFormation template:
-  * `npm run package`
+  * `yarn package`
 * Deploy to CloudFormation:
-  * `npm run deploy`
+  * `yarn deploy`
 
 ## Deploy from the AWS Serverless Application Repository
 * Hit "Deploy" from the [application](https://serverlessrepo.aws.amazon.com/#/applications/arn:aws:serverlessrepo:us-east-1:233054207705:applications~serverless-todo) page

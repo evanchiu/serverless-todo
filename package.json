@@ -1,11 +1,12 @@
 {
   "name": "serverless-todo",
-  "version": "1.0.3",
+  "version": "2.0.0",
   "description": "React TodoMVC with a Serverless backend",
+  "type": "module",
   "main": "src/index.js",
   "scripts": {
     "lint": "eslint src",
-    "build": "node_modules/gulp/bin/gulp.js",
+    "build": "rollup --config && zip -r todo.zip bundle.js public",
     "package": "aws cloudformation package --template-file template.yml --output-template-file packaged-template.yml --s3-bucket $CODE_BUCKET",
     "deploy": "aws cloudformation deploy --template-file packaged-template.yml --capabilities CAPABILITY_IAM --stack-name dev-todo-$USER"
   },
@@ -29,6 +30,10 @@
     "mime-types": "^2.1.35"
   },
   "devDependencies": {
-    "eslint": "^8.52.0"
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-json": "^6.0.1",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "eslint": "^8.52.0",
+    "rollup": "^4.1.4"
   }
 }

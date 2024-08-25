@@ -11,9 +11,9 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Description: React TodoMVC with a Serverless backend
-      Handler: src/index.handler
-      Runtime: nodejs12.x
-      CodeUri: build/todo.zip
+      Handler: bundle.handler
+      Runtime: nodejs20.x
+      CodeUri: todo.zip
       Policies:
         - DynamoDBCrudPolicy:
             TableName:
